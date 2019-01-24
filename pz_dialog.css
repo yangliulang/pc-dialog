@@ -1,0 +1,130 @@
+.J_PZDialog_mask {
+  display: none;
+  background: #000;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  position: fixed;
+  _position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+}
+.J_PZDialog {
+  display: none;
+  position: fixed;
+  _position: absolute;
+  padding: 5px;
+  padding-right: 7px;
+  _padding-right: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+  z-index: 10000;
+}
+
+.J_PZDialog_caption {
+  height: 50px;
+  border-bottom: 1px solid #c9c9c9;
+  line-height: 47px;
+  background: #fff;
+  border-radius: 3px 3px 0 0;
+}
+.J_PZDialog_caption_text {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  padding-left: 15px;
+  text-shadow: #fff 1px 1px 0;
+}
+.J_PZDialog_close {
+  cursor: pointer;
+  float: right;
+  display: block;
+  width: 13px;
+  height: 13px;
+  font-size: 12px;
+  text-align: center;
+  position: relative;
+  top: 8px;
+  left: -7px;
+  line-height: 15px;
+  *line-height: 14px;
+  overflow: hidden;
+  background: #eee;
+  border-radius: 3px;
+}
+.J_PZDialog_content {
+  position: relative;
+  min-height: 30px;
+  background: #fff;
+  color: #666;
+  padding: 10px;
+  font-size: 12px;
+  overflow: hidden;
+  zoom: 1;
+  line-height: 180%;
+}
+.J_PZDialog_content .dialog_alert_tips {
+  min-height: 21px;
+  line-height: 21px;
+  text-indent: 10px;
+  margin-bottom: 10px;
+}
+.J_PZDialog_content .dialog_alert_tips input {
+  width: 260px;
+  height: 20px;
+  text-indent: 3px;
+  line-height: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  overflow: hidden;
+  resize: none;
+  *width: 260px;
+  *margin-left: 7px;
+  font-size: 12px;
+  color: #666;
+}
+.J_PZDialog_content .dialog_btn_box {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  overflow: hidden;
+  zoom: 1;
+}
+.J_PZDialog_content .dialog_btn_box .dialog_btn_inner {
+  height: 32px;
+  width: 180px;
+  padding-left: 5px;
+  margin: 0 auto;
+}
+.J_PZDialog_content .dialog_alert_btn {
+  width: 80px;
+  cursor: pointer;
+  background: #ef363e;
+  padding: 2px;
+  margin: 0 auto;
+}
+.J_PZDialog_content .dialog_alert_btn div {
+  height: 26px;
+  border: 1px solid #ef363e;
+  color: #fff;
+  font-weight: bold;
+  background: #ef363e;
+  line-height: 26px;
+  text-align: center;
+}
+.J_PZDialog_content .dialog_btn_box .dialog_alert_btn {
+  margin: inherit;
+  float: left;
+  margin-right: 5px;
+}
+.J_PZDialog_content .dialog_btn_box .dialog_alert_btn:hover {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.J_PZDialog_content .dialog_btn_box .delay {
+  background-color: gray;
+}
+.J_PZDialog_content .dialog_btn_box .delay div {
+  background-color: gray;
+  border-color: gray;
+}

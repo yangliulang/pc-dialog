@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>alert,confirm.....</title>
+
+    <link rel="stylesheet" href="pz_dialog.css" />
+    <script type="text/javascript" src="../../../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="pz_dialog.js"></script>
+  </head>
+  <body style="padding:50px;height:3000px;">
+    额外范文芳无法威风威风威风威风威风吧
+
+    <script type="text/javascript">
+      $(function() {
+        //默认的提示效果
+        $('#BT1').click(function() {
+          var tips = new PZ_Dialog({
+            width: 300, //可选参数，可以自由配置对话框的尺寸
+            height: 115, //可选参数，可以自由配置对话框的尺寸
+            text: '请输入提示信息', //可选参数，对话框的标题
+            tipsText: '操作成操作成功功操作成功功!', //对话框提示内容
+            mask: 0.15, //开起遮罩，并且设置遮罩的透明度
+            isDrag: true
+          });
+        });
+
+        $('#BT2').click(function() {
+          var tips = new PZ_Dialog({
+            type: 'alert',
+            callBack: function() {
+              //回调函数
+              alert('确认按钮');
+              /***************阻止掉自动关闭*****************/
+              return true;
+            },
+            height: 300,
+            text: '提示',
+            position: [-200, -10],
+            tipsText: '操作成操作操功操作成功功!',
+            isDrag: true,
+            mask: 0.8
+          });
+        });
+        $('#BT3').click(function() {
+          var tips = new PZ_Dialog({
+            type: 'confirm',
+            height: 300,
+            width: 800,
+            text: '模仿confirm',
+            tipsText: "是<a href='#'>否继续?</a>",
+            buttonSureText: '知道了',
+            buttonCancelText: '关闭',
+            callBack: function() {
+              //回调函数
+              alert('确认按钮');
+            },
+            cancelCallBack: function() {
+              alert('取消按钮');
+              //return true;
+            },
+            mask: 0.8,
+            position: [-200, -10],
+            isDrag: true //开起拖动
+          });
+        });
+        $('#BT4').click(function() {
+          var tips = new PZ_Dialog({
+            type: 'prompt', //弹出prompt对话框
+            text: '输入验证码！', //对话框的标题和输入框的提示信息
+            callBack: function(result) {
+              //确定按钮的回调函数,参数值及是输入的内容
+              alert(result);
+
+              //return true;
+            },
+            cancelCallBack: function() {
+              alert('取消按钮');
+              //return true ;
+            },
+            isDrag: true,
+            mask: 'transparent'
+          });
+        });
+        $('#BT5').click(function() {
+          var tips = new PZ_Dialog({
+            type: 'tips',
+            text: '清理成功！',
+            delay: 1, //提示框延时几秒，不提供默认为3秒关闭
+            mask: 'transparent'
+          });
+        });
+
+        $('#BT6').click(function() {
+          var tips = new PZ_Dialog({
+            type: 'coustom',
+            width: 600,
+
+            text: '定制按钮',
+            tipsText: 'efwefwefw',
+            btnGroup: [
+              {
+                btnTxt: '关闭',
+                skin: 'gray',
+                callback: function() {
+                  alert(1);
+                }
+              },
+
+              {
+                btnTxt: '申诉',
+                callback: function() {
+                  alert(2);
+                },
+                delayDisable: 10
+              },
+              {
+                btnTxt: '取消',
+                callback: function() {
+                  alert(3);
+                  return false;
+                }
+              }
+            ],
+            mask: 0.5
+          });
+        });
+
+        $('#BT7').click(function() {
+          alert($.dialog);
+          $.dialog({
+            type: 'coustom',
+            width: 600,
+            height: 400,
+            text: '定制按钮',
+            tipsText: 'efwefwefw',
+            btnGroup: [
+              {
+                btnTxt: '关闭',
+                callback: function() {
+                  alert(1);
+                }
+              },
+
+              {
+                btnTxt: '申诉',
+                callback: function() {
+                  alert(2);
+                }
+              },
+              {
+                btnTxt: '取消',
+                callback: function() {
+                  alert(3);
+                  return false;
+                }
+              }
+            ],
+            mask: 0.5
+          });
+        });
+      });
+    </script>
+    <button id="BT1">弹窗默认</button> <button id="BT2">弹窗alert</button>
+    <button id="BT3">弹窗confirm(开起拖动)</button>
+    <button id="BT4">弹窗(prompt)</button>
+    <button id="BT5">小提示（3秒后关闭）</button>
+    <button id="BT6">自由定制按钮数量</button>
+    <button id="BT7">$.dialog()</button>
+  </body>
+</html>
